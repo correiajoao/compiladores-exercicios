@@ -1,9 +1,9 @@
 /* Universidade Federal de Alagoas - Campus A.C. Simões 
-* Aluno: João Correia
-* Pseudo código das funções de um analisador descendente preditivo recursivo. 
+*  Aluno: João Correia
+*  Pseudo código das funções de um analisador descendente preditivo recursivo, para a linguagem dada em sala.
 */
 
-int main(){
+void main(){
 	//Abre o arquivo 
 	//Cria o analisador léxico
 	//Cria o token
@@ -136,6 +136,8 @@ void fsent(){
 		fcond();
 	}else if(tk.categ() == PARA || tk.categ() == ENQUANTO || tk.categ() == REPITA){
 		finter();
+	}else{
+		erro("Sentença esperada", tk);
 	}
 }
 
@@ -239,13 +241,13 @@ void fiter(){
 			erro(ENQUANTO, " esperado", tk);
 		}
 	}else{
-		erro(PARA, ",",ENQUANTO, "ou", REPITA " esperado", tk);
+		erro(PARA, ",", ENQUANTO, "ou", REPITA, " esperado", tk);
 	}
 } 
 
 //passo = 'passo' ea | vazio
 void fpasso(){
-	if(tk.categ() == "passo"){
+	if(tk.categ() == PASSO){
 		tk.next();
 		fea();
 	}
