@@ -1,0 +1,52 @@
+Gramática: 
+
+S = Ea 
+Ea = Ea 'opa' Ta
+Ea = Ta
+Ta = Ta 'opm' Pa
+Ta = Pa
+Pa = Fa '**' Pa
+Pa = Fa
+Fa = '(' Ea ')'
+Fa = 'id'
+Fa = 'cten'
+
+Cálculo dos conjuntos LR(0):
+
+I0 =  c({S = .Ea}) = {S=.Ea, Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
+I1 =  goto(I0, Ea) = {S=Ea., Ea=Ea.'opa'Ta} 
+I2 =  goto(I0, Ta) = {Ea=Ta., Ta=Ta.'opm'Pa}
+I3 =  goto(I0, Pa) = {Ta=Pa.}
+I4 =  goto(I0, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}
+I5 =  goto(I0, '(') = {Fa='('.Ea')', Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
+I6 =  goto(I0, 'id') = {Fa='id'.} 
+I7 =  goto(I0, 'cten') = {Fa='cten'.}
+I8 =  goto(I1, 'opa') = {Ea=Ea'opa'.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
+I9 =  goto(I2, 'opm') = {Ta=Ta'opm'.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
+I10 = goto(I4, '**') = {Pa=Fa'**'.Pa, Pa =.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
+I11 = goto(I5, Ea) = {Fa='('Ea.')', Ea=Ea.'opa'Ta}
+I2  = goto(I5, Ta) = {Ea=Ta., Ta=Ta.'opm'Pa} 
+I3  = goto(I5, Pa) = {Ta=Pa.} 				 	
+I4  = goto(I5, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}  	
+I5  = goto(I5, '(') = {Fa='('.Ea')', Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'} ====== > I5
+I6  = goto(I5, 'id') = {Fa='id'.} 			 	
+I7  = goto(I5, 'cten') = {Fa='cten'} 		 	
+I12 = goto(I8, Ta) = {Ea=Ea'opa'Ta., Ta=Ta.'opm'Pa}	  
+I3  = goto(I8, Pa) = {Ta=Pa.} 				 	
+I4  = goto(I8, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}  	
+I5  = goto(I8, '(') = {Fa='('.Ea')', Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}  ====== > I5
+I6  = goto(I8, 'id') = {Fa='id'.} 			 	
+I7  = goto(I8. 'cten') = {Fa='cten'.} 		 	
+I13 = goto(I9, Pa) = {Ta=Ta'opm'Pa.}
+I4  = goto(I9, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}  
+I5  = goto(I9, '(') = {Fa='('.Ea')', Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'} 
+I6  = goto(I9, 'id') = {Fa='id'.} 			 	
+I7  = goto(I9, 'cten') = {Fa='cten'.} 		 	
+I14 = goto(I10, Pa) = {Pa=Fa'**'Pa.} 
+I4  = goto(I10, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.} 
+I5  = goto(I10, '(') = {Fa='('.Ea')', Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
+I6  = goto(I10, 'id') = {Fa='id'.} 			
+I7  = goto(I10. 'cten') = {Fa='cten'.} 		 	
+I15 = goto(I11, ')') = {Fa='('Ea')'.}
+I8  = goto(I11, 'opa') = {Ea=Ea'opa'.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
+I9  = goto(I12, 'opm') = {Ta=Ta'opm'.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
