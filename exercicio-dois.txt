@@ -59,7 +59,7 @@ E9  | I9  = goto(I12, 'opm') = {Ta=Ta'opm'.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')
 
 
 
-2.2 Calculo dos conjuntos LR(0) 
+2.2 Calculo dos conjuntos LR(0) - Refatorado
 
       I0 =  c({S = .Ea}) = {S=.Ea, Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 T1  | I1 =  goto(I0, Ea) = {S=Ea., Ea=Ea.'opa'Ta} 
