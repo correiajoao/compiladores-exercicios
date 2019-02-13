@@ -21,51 +21,51 @@
  	
       I0 =  c({S = .Ea}) = {S=.Ea, Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 T1  | I1 =  goto(I0, Ea) = {S=Ea., Ea=Ea.'opa'Ta} 
-E2  | I2 =  goto(I0, Ta) = {Ea=Ta., Ta=Ta.'opm'Pa}
-E3  | I3 =  goto(I0, Pa) = {Ta=Pa.}
-E4  | I4 =  goto(I0, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}
+T2  | I2 =  goto(I0, Ta) = {Ea=Ta., Ta=Ta.'opm'Pa}
+T3  | I3 =  goto(I0, Pa) = {Ta=Pa.}
+T4  | I4 =  goto(I0, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}
 E5  | I5 =  goto(I0, '(') = {Fa='('.Ea')', Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 E6  | I6 =  goto(I0, 'id') = {Fa='id'.} 
 E7  | I7 =  goto(I0, 'cten') = {Fa='cten'.}
 E8  | I8 =  goto(I1, 'opa') = {Ea=Ea'opa'.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 E9  | I9 =  goto(I2, 'opm') = {Ta=Ta'opm'.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
-T10 | I10 = goto(I4, '**') = {Pa=Fa'**'.Pa, Pa =.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
+E10 | I10 = goto(I4, '**') = {Pa=Fa'**'.Pa, Pa =.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 T11 | I11 = goto(I5, Ea) = {Fa='('Ea.')', Ea=Ea.'opa'Ta}
-E2  | I2  = goto(I5, Ta) = {Ea=Ta., Ta=Ta.'opm'Pa} 
-E3  | I3  = goto(I5, Pa) = {Ta=Pa.} 				 	
-E4  | I4  = goto(I5, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}  	
+T2  | I2  = goto(I5, Ta) = {Ea=Ta., Ta=Ta.'opm'Pa} 
+T3  | I3  = goto(I5, Pa) = {Ta=Pa.} 				 	
+T4  | I4  = goto(I5, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}  	
 E5  | I5  = goto(I5, '(') = {Fa='('.Ea')', Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 E6  | I6  = goto(I5, 'id') = {Fa='id'.} 			 	
 E7  | I7  = goto(I5, 'cten') = {Fa='cten'} 		 	
 T12 | I12 = goto(I8, Ta) = {Ea=Ea'opa'Ta., Ta=Ta.'opm'Pa}	  
-E3  | I3  = goto(I8, Pa) = {Ta=Pa.} 				 	
-E4  | I4  = goto(I8, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}  	
+T3  | I3  = goto(I8, Pa) = {Ta=Pa.} 				 	
+T4  | I4  = goto(I8, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}  	
 E5  | I5  = goto(I8, '(') = {Fa='('.Ea')', Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 E6  | I6  = goto(I8, 'id') = {Fa='id'.} 			 	
 E7  | I7  = goto(I8. 'cten') = {Fa='cten'.} 		 	
 T13 | I13 = goto(I9, Pa) = {Ta=Ta'opm'Pa.}
-E4  | I4  = goto(I9, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}  
+T4  | I4  = goto(I9, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}  
 E5  | I5  = goto(I9, '(') = {Fa='('.Ea')', Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'} 
 E6  | I6  = goto(I9, 'id') = {Fa='id'.} 			 	
 E7  | I7  = goto(I9, 'cten') = {Fa='cten'.} 		 	
 T14 | I14 = goto(I10, Pa) = {Pa=Fa'**'Pa.} 
-E4  | I4  = goto(I10, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.} 
+T4  | I4  = goto(I10, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.} 
 E5  | I5  = goto(I10, '(') = {Fa='('.Ea')', Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 E6  | I6  = goto(I10, 'id') = {Fa='id'.} 			
 E7  | I7  = goto(I10. 'cten') = {Fa='cten'.} 		 	
-T14 | I15 = goto(I11, ')') = {Fa='('Ea')'.}
+E15 | I15 = goto(I11, ')') = {Fa='('Ea')'.}
 E8  | I8  = goto(I11, 'opa') = {Ea=Ea'opa'.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 E9  | I9  = goto(I12, 'opm') = {Ta=Ta'opm'.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 
 
 
-2.2 Calculo dos conjuntos LR(0) - Refatorado
+2.2 Conjunto dos LR(0)
 
       I0 =  c({S = .Ea}) = {S=.Ea, Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 T1  | I1 =  goto(I0, Ea) = {S=Ea., Ea=Ea.'opa'Ta} 
-E2  | I2 =  goto(I0, Ta) = {Ea=Ta., Ta=Ta.'opm'Pa}
-E3  | I3 =  goto(I0, Pa) = {Ta=Pa.}
-E4  | I4 =  goto(I0, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}
+T2  | I2 =  goto(I0, Ta) = {Ea=Ta., Ta=Ta.'opm'Pa}
+T3  | I3 =  goto(I0, Pa) = {Ta=Pa.}
+T4  | I4 =  goto(I0, Fa) = {Pa=Fa.'**'Pa, Pa=Fa.}
 E5  | I5 =  goto(I0, '(') = {Fa='('.Ea')', Ea=.Ea'opa'Ta, Ea=.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 E6  | I6 =  goto(I0, 'id') = {Fa='id'.} 
 E7  | I7 =  goto(I0, 'cten') = {Fa='cten'.}
@@ -73,29 +73,29 @@ E8  | I8 =  goto(I1, 'opa') = {Ea=Ea'opa'.Ta, Ta=.Ta'opm'Pa, Ta=.Pa, Pa=.Fa'**'P
 E9  | I9 =  goto(I2, 'opm') = {Ta=Ta'opm'.Pa, Pa=.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 T10 | I10 = goto(I4, '**') = {Pa=Fa'**'.Pa, Pa =.Fa'**'Pa, Pa=.Fa, Fa=.'('Ea')', Fa=.'id', Fa=.'cten'}
 T11 | I11 = goto(I5, Ea) = {Fa='('Ea.')', Ea=Ea.'opa'Ta}
-E2  | I2  = goto(I5, Ta) 
-E3  | I3  = goto(I5, Pa) 
-E4  | I4  = goto(I5, Fa) 
+T2  | I2  = goto(I5, Ta) 
+T3  | I3  = goto(I5, Pa) 
+T4  | I4  = goto(I5, Fa) 
 E5  | I5  = goto(I5, '(')
 E6  | I6  = goto(I5, 'id')
 E7  | I7  = goto(I5, 'cten')
 T12 | I12 = goto(I8, Ta) = {Ea=Ea'opa'Ta., Ta=Ta.'opm'Pa}	  
-E3  | I3  = goto(I8, Pa) 
-E4  | I4  = goto(I8, Fa) 
+T3  | I3  = goto(I8, Pa) 
+T4  | I4  = goto(I8, Fa) 
 E5  | I5  = goto(I8, '(')
 E6  | I6  = goto(I8, 'id')
 E7  | I7  = goto(I8. 'cten')
 T13 | I13 = goto(I9, Pa) = {Ta=Ta'opm'Pa.}
-E4  | I4  = goto(I9, Fa) 
+T4  | I4  = goto(I9, Fa) 
 E5  | I5  = goto(I9, '(') 
 E6  | I6  = goto(I9, 'id')
 E7  | I7  = goto(I9, 'cten')
 T14 | I14 = goto(I10, Pa) = {Pa=Fa'**'Pa.} 
-E4  | I4  = goto(I10, Fa) 
+T4  | I4  = goto(I10, Fa) 
 E5  | I5  = goto(I10, '(') 
 E6  | I6  = goto(I10, 'id')
 E7  | I7  = goto(I10. 'cten')
-T14 | I15 = goto(I11, ')') = {Fa='('Ea')'.}
+E15 | I15 = goto(I11, ')') = {Fa='('Ea')'.}
 E8  | I8  = goto(I11, 'opa') 
 E9  | I9  = goto(I12, 'opm')
 
@@ -104,9 +104,9 @@ E9  | I9  = goto(I12, 'opm')
 
       I0 =  c({S = .Ea}) 
 T1  | I1 =  goto(I0, Ea)     | [1, EOF] = ACEITA  
-E2  | I2 =  goto(I0, Ta)     | [2, EOF, 'opa', ')'] = R2
-E3  | I3 =  goto(I0, Pa)     | [3, EOF, 'opm', 'opa', ')'] = R4
-E4  | I4 =  goto(I0, Fa)     | [4, EOF, 'opm', 'opa', ')'] = R6
+T2  | I2 =  goto(I0, Ta)     | [2, EOF, 'opa', ')'] = R2
+T3  | I3 =  goto(I0, Pa)     | [3, EOF, 'opm', 'opa', ')'] = R4
+T4  | I4 =  goto(I0, Fa)     | [4, EOF, 'opm', 'opa', ')'] = R6
 E5  | I5 =  goto(I0, '(')    | 
 E6  | I6 =  goto(I0, 'id')   | [6, '**', EOF, 'opm', 'opa', ')'] = R8
 E7  | I7 =  goto(I0, 'cten') | [7, '**', EOF, 'opm', 'opa', ')'] = R9
@@ -114,29 +114,29 @@ E8  | I8 =  goto(I1, 'opa')  |
 E9  | I9 =  goto(I2, 'opm')  |
 E10 | I10 = goto(I4, '**')   | 
 T11 | I11 = goto(I5, Ea)     |
-E2  | I2  = goto(I5, Ta)     |
-E3  | I3  = goto(I5, Pa)     |
-E4  | I4  = goto(I5, Fa)     |
+T2  | I2  = goto(I5, Ta)     |
+T3  | I3  = goto(I5, Pa)     |
+T4  | I4  = goto(I5, Fa)     |
 E5  | I5  = goto(I5, '(')    |
 E6  | I6  = goto(I5, 'id')   | 
 E7  | I7  = goto(I5, 'cten') |
 T12 | I12 = goto(I8, Ta)     | [12, EOF, 'opa', ')'] = R1
-E3  | I3  = goto(I8, Pa)     |
-E4  | I4  = goto(I8, Fa)     |
+T3  | I3  = goto(I8, Pa)     |
+T4  | I4  = goto(I8, Fa)     |
 E5  | I5  = goto(I8, '(')    | 
 E6  | I6  = goto(I8, 'id')   |
 E7  | I7  = goto(I8. 'cten') | 
 T13 | I13 = goto(I9, Pa)     | [13, EOF, 'opm', 'opa', ')'] = R3
-E4  | I4  = goto(I9, Fa)     |
+T4  | I4  = goto(I9, Fa)     |
 E5  | I5  = goto(I9, '(')    |
 E6  | I6  = goto(I9, 'id')   |
 E7  | I7  = goto(I9, 'cten') |
 T14 | I14 = goto(I10, Pa)    | [14, EOF, 'opm', 'opa', ')'] = R5
-E4  | I4  = goto(I10, Fa)    |
+T4  | I4  = goto(I10, Fa)    |
 E5  | I5  = goto(I10, '(')   |
 E6  | I6  = goto(I10, 'id')  |
 E7  | I7  = goto(I10. 'cten')|
-T15 | I15 = goto(I11, ')')   | [15 '**', EOF, 'opm', 'opa', ')'] = R7
+E15 | I15 = goto(I11, ')')   | [15 '**', EOF, 'opm', 'opa', ')'] = R7
 E8  | I8  = goto(I11, 'opa') |
 E9  | I9  = goto(I12, 'opm') |
 
