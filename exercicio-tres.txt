@@ -1,3 +1,9 @@
+
+/* Universidade Federal de Alagoas - Campus A.C. Simões 
+*  Aluno: João Correia
+*  Adaptar a gramática abaixo para ser renconhecida por um analisador descendente e adicionar suas ações semânticas
+*
+
 Sendo a gramática:
 
 (1) Res = Ea '='
@@ -24,7 +30,7 @@ Removendo a recursão à esquerda:
 (10) Fa = '(' Ea ')'
 (11) Fa = 'cteN'
 
-Inserindo as ações semânticas
+Inserindo as ações semânticas:
  
 (1) Res = Ea '=' {printf("%f", Ea.val);}
 (2) Ea = Ta {Ear.vh = Ta.val } Ear {Ea.val = Ear.vs} 
