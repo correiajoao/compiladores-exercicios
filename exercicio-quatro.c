@@ -1,3 +1,8 @@
+/* Universidade Federal de Alagoas - Campus A.C. Simões 
+*  Aluno: João Correia
+*  Codificar o analisador descendente preditivo recursivo da gramática abaixo
+*/
+
 Sendo a gramática abaixo:
 
 (1) Calc = Ea '=' {printf("%f", Ea.val);}
@@ -22,7 +27,7 @@ void Calc(){
 }
 
 float Ea(){
-	float Taval, Earvh, Eaval;
+	float Taval, Earvh, Earvs, Eaval;
 	
 	Taval=Ta();
 	Earvh=Taval;
@@ -95,12 +100,12 @@ float Fa(){
 			token.next();
 			return Faval;
 		}else{
-			printf("Erro: ')' esperado")
+			printf("Erro: ')' esperado");
 		}
 	}else if(token.categ == CTEN) {
 		token.next();
 		Faval = atof(token.lex);
 	}else{
-		printf("Erro: '(' ou 'Constante' esperados")
+		printf("Erro: '(' ou 'Constante' esperados");
 	}
 }
