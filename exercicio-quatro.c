@@ -23,6 +23,8 @@ void Calc(){
 	if(token.categ == ATR){
 		token.next();
 		printf("%f", Ea());	
+	}else{
+		printf("Erro: '=' esperado");	
 	}
 }
 
